@@ -37,6 +37,7 @@ namespace nms
         {
             message.ReadValueSafe(out T data);
             OnRequestReceived?.Invoke(data);
+            OnRequestReceivedWithSenderId?.Invoke(senderId, data);
         }
 
         public virtual void SendToServer(T data)
